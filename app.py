@@ -4,8 +4,6 @@ from flask import Response
 from flask import request
 import json
 
-2
-
 app=Flask(__name__)
 
 
