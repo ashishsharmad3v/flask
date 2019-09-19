@@ -82,7 +82,8 @@ def delete_book(isbn):
             break
     
     if(foundBook==None):
-        response=Response(json.dumps("book not found"),status=404)
+        invalidBookDeleteResponse = {"error":f"unable to delete the book with {isbn} isbn."}
+        response=Response(json.dumps(invalidBookDeleteResponse),status=404)
     else:
         books.remove(foundBook)
         response=Response(json.dumps("book removed"),status=200)
